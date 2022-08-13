@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var searchTerm: String = ""
     @ObservedObject private var stockListVM = StockListViewModel()
     
     init() {
@@ -34,13 +33,25 @@ struct ContentView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color.gray)
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
-                    .offset(y: -350)
+                    .offset(y: -400)
                 
                 SearchView(searchTerm: self.$stockListVM.searchTerm)
-                    .offset(y: -300)
+                    .offset(y: -350)
                 
                 StockListView(stocks: filteredStocks)
-                    .offset(y: 100)
+                    .offset(y: 200)
+                
+                NewsArticleView(newsArticle: self.stockListVM.news, onDragBegin: { value in
+                    self.stockListVM.dragOffset = value.translation
+                }, onDragEnd: { value in
+                    if value.translation.height < 0 {
+                        self.stockListVM.dragOffset = CGSize(width: 0, height: 100)
+                    } else {
+                        self.stockListVM.dragOffset = CGSize(width: 0, height: 600)
+                    }
+                })
+                .animation(.spring())
+                .offset(y: self.stockListVM.dragOffset.height)
             }
                 .navigationBarTitle("Stocks")
         }.edgesIgnoringSafeArea(Edge.Set(.bottom))

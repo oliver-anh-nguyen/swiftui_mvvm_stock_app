@@ -17,11 +17,10 @@
 		580A2FAF28A57FAE00DA605E /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580A2FAE28A57FAE00DA605E /* StockViewModel.swift */; };
 		580A2FB228A592D100DA605E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580A2FB128A592D100DA605E /* SearchView.swift */; };
 		580A2FB428A5FDE700DA605E /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580A2FB328A5FDE700DA605E /* StockListView.swift */; };
-		5850657D28A811650029263D /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5850657C28A811650029263D /* URLImage */; };
-		5850657F28A811650029263D /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 5850657E28A811650029263D /* URLImageStore */; };
 		5863407928A6FB750091F2A9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863407828A6FB750091F2A9 /* Article.swift */; };
 		5863407B28A6FCB70091F2A9 /* NewsArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863407A28A6FCB70091F2A9 /* NewsArticleViewModel.swift */; };
 		5863407D28A6FDCD0091F2A9 /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5863407C28A6FDCD0091F2A9 /* NewsArticleView.swift */; };
+		58A8719D29060C9D00FAA31A /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 58A8719C29060C9D00FAA31A /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5850657F28A811650029263D /* URLImageStore in Frameworks */,
-				5850657D28A811650029263D /* URLImage in Frameworks */,
+				58A8719D29060C9D00FAA31A /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +145,7 @@
 			);
 			name = StockApp;
 			packageProductDependencies = (
-				5850657C28A811650029263D /* URLImage */,
-				5850657E28A811650029263D /* URLImageStore */,
+				58A8719C29060C9D00FAA31A /* URLImage */,
 			);
 			productName = StockApp;
 			productReference = 580A2F9428A57D1900DA605E /* StockApp.app */;
@@ -179,7 +176,7 @@
 			);
 			mainGroup = 580A2F8B28A57D1900DA605E;
 			packageReferences = (
-				5850657B28A811650029263D /* XCRemoteSwiftPackageReference "url-image" */,
+				58A8719B29060C9D00FAA31A /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 580A2F9528A57D1900DA605E /* Products */;
 			projectDirPath = "";
@@ -420,26 +417,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5850657B28A811650029263D /* XCRemoteSwiftPackageReference "url-image" */ = {
+		58A8719B29060C9D00FAA31A /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5850657C28A811650029263D /* URLImage */ = {
+		58A8719C29060C9D00FAA31A /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5850657B28A811650029263D /* XCRemoteSwiftPackageReference "url-image" */;
+			package = 58A8719B29060C9D00FAA31A /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
-		};
-		5850657E28A811650029263D /* URLImageStore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5850657B28A811650029263D /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImageStore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
